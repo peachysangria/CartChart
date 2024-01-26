@@ -8,9 +8,12 @@
 import SwiftUI
 
 extension [Product] {
-    var type: Category {
-        if let firstProduct = self.first { return firstProduct.category }
-        return .food
+    var category: Category {
+        if let firstProduct = self.first {
+            return firstProduct.category
+        }
+        
+        return .dairy
     }
 }
 

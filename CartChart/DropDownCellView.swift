@@ -17,11 +17,8 @@ struct DropDownCellView: View {
     var body: some View {
         VStack(alignment: .center) {
             LazyVGrid(columns: gridLayout, alignment: .center, spacing: 7) {
-//                for i in 0...3 {
-//                    chartProducts[i].product.image
-//                }
-                ForEach(0..<4) { _ in
-                    Rectangle()
+                ForEach(chartProducts.shuffled().prefix(4)) { product in
+                    product.product.image
                         .frame(width: 70, height: 70)
                         .cornerRadius(10)
                         .foregroundColor(.mint)
@@ -38,6 +35,6 @@ struct DropDownCellView: View {
 
 struct DropDownCellView_Previews: PreviewProvider {
     static var previews: some View {
-        DropDownCellView(chartTitle: "Список N", chartProducts: [ChartProduct(product: Product(name: "пук", category: .food, image: Image(systemName: "leaf")))])
+        DropDownCellView(chartTitle: "Список N", chartProducts: [ChartProduct(product: Product(name: "пук", category: .cheese, image: Image(systemName: "leaf")))])
     }
 }

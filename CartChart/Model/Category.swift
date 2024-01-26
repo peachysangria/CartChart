@@ -2,8 +2,8 @@
 import Foundation
 
 enum Category: String, CaseIterable {
-    case food = "Все"
-    case dairy = "Молоко и яйца"
+    //case food = "Все"
+    case dairy = "Молочные продукты и яйца"
     case cheese = "Сыр"
     case meat = "Мясо"
     case fish = "Рыба"
