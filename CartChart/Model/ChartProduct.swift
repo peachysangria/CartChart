@@ -11,6 +11,6 @@ struct ChartProduct: Identifiable {
     var id = UUID()
     
     var product: Product
-    var quanity: Int?
-    var weight: Double?
+    var quanity: Int
+    var units: Double?
 }

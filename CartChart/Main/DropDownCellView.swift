@@ -35,6 +35,6 @@ struct DropDownCellView: View {
 
 struct DropDownCellView_Previews: PreviewProvider {
     static var previews: some View {
-        DropDownCellView(chartTitle: "Список N", chartProducts: [ChartProduct(product: Product(name: "пук", category: .cheese, image: Image(systemName: "leaf")))])
+        DropDownCellView(chartTitle: "Список N", chartProducts: [ChartProduct(product: Product(name: "пук", category: .cheese, image: Image(systemName: "leaf"), unit: .litres), quanity: 1)])
     }
 }

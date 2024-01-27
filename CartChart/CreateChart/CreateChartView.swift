@@ -2,27 +2,29 @@
 import SwiftUI
 
 struct CreateChartView: View {
-    var products: [Product] = [Product(name: "Молоко", category: .dairy, image: Image(systemName: "leaf")),
-                               Product(name: "Молоко", category: .dairy, image: Image(systemName: "leaf")),
-                               Product(name: "Молоко", category: .cheese, image: Image(systemName: "leaf")),
-                               Product(name: "Молоко", category: .meat, image: Image(systemName: "leaf")),
-                               Product(name: "Молоко", category: .fish, image: Image(systemName: "leaf")),
-                               Product(name: "Хлеб сельский", category: .flour, image: Image(systemName: "leaf")),
-                               Product(name: "Малина", category: .fruitsVegs, image: Image(systemName: "leaf")),             
-                               Product(name: "Клубника", category: .fruitsVegs, image: Image(systemName: "leaf")),
-                               Product(name: "Ежевика", category: .fruitsVegs, image: Image(systemName: "leaf")),
-                               Product(name: "Сельдерей", category: .fruitsVegs, image: Image(systemName: "leaf")),
-                               Product(name: "Груша", category: .fruitsVegs, image: Image(systemName: "leaf")),
-                               Product(name: "Банан", category: .fruitsVegs, image: Image(systemName: "leaf")),
-                               Product(name: "Вода 5л", category: .drinks, image: Image(systemName: "leaf")),
-                               Product(name: "Red Bull 0.5", category: .drinks, image: Image(systemName: "leaf")),
-                               Product(name: "Молоко", category: .houseChemicals, image: Image(systemName: "leaf")),
-                               Product(name: "Молоко", category: .cosmetics, image: Image(systemName: "leaf"))]
+    var products: [Product] = [Product(name: "Молоко", category: .dairy, image: Image(systemName: "leaf"), unit: .litres),
+                               Product(name: "Молоко", category: .dairy, image: Image(systemName: "leaf"), unit: .litres),
+                               Product(name: "Молоко", category: .cheese, image: Image(systemName: "leaf"), unit: .litres),
+                               Product(name: "Молоко", category: .meat, image: Image(systemName: "leaf"), unit: .litres),
+                               Product(name: "Молоко", category: .fish, image: Image(systemName: "leaf"), unit: .litres),
+                               Product(name: "Хлеб сельский", category: .flour, image: Image(systemName: "leaf"), unit: .grams),
+                               Product(name: "Малина", category: .fruitsVegs, image: Image(systemName: "leaf"), unit: .grams),
+                               Product(name: "Клубника", category: .fruitsVegs, image: Image(systemName: "leaf"), unit: .grams),
+                               Product(name: "Ежевика", category: .fruitsVegs, image: Image(systemName: "leaf"), unit: .grams),
+                               Product(name: "Сельдерей", category: .fruitsVegs, image: Image(systemName: "leaf"), unit: .grams),
+                               Product(name: "Груша", category: .fruitsVegs, image: Image(systemName: "leaf"), unit: .grams),
+                               Product(name: "Банан", category: .fruitsVegs, image: Image(systemName: "leaf"), unit: .grams),
+                               Product(name: "Вода 5л", category: .drinks, image: Image(systemName: "leaf"), unit: .litres),
+                               Product(name: "Red Bull 0.5", category: .drinks, image: Image(systemName: "leaf"), unit: .litres),
+                               Product(name: "Молоко", category: .houseChemicals, image: Image(systemName: "leaf"), unit: .litres),
+                               Product(name: "Молоко", category: .cosmetics, image: Image(systemName: "leaf"), unit: .litres)]
     
     @State private var searchText = ""
     @State private var selectedCategory: Category = .dairy
     @State private var productsBasedOnCategory: [[Product]] = []
+    @State private var chartProducts: [ChartProduct] = []
     @State private var animationProgress: CGFloat = 0
+    
     let columns = [
         GridItem(.fixed(180)),
         GridItem(.flexible()),
@@ -72,7 +74,7 @@ struct CreateChartView: View {
             
             LazyVGrid(columns: columns, alignment: .center, spacing: 15) {
                 ForEach(products) { product in
-                    ProductRowView(product)
+                    ProductSectionVIew(product: product, chartProducts: $chartProducts)
                 }
             }
         }
@@ -86,22 +88,6 @@ struct CreateChartView: View {
                 }
             }
         }
-    }
-    
-    @ViewBuilder
-    func ProductRowView(_ product: Product) -> some View {
-        VStack {
-            product.image
-                .resizable()
-                .frame(width: 160, height: 160)
-                .cornerRadius(15)
-                .foregroundColor(.orange)
-            
-            Text(product.name)
-                .fontWeight(.medium)
-                .font(.system(size: 18))
-        }
-        .frame(maxWidth: .infinity, alignment: .leading)
     }
     
     @ViewBuilder

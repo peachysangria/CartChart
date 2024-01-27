@@ -81,9 +81,9 @@ struct DropDownView: View {
     }
 }
 
-let actions: [DropDownCell] = [DropDownCell(title: "One", chartProducts: [ChartProduct(product: Product(name: "пук", category: .cheese, image: Image(systemName: "leaf")))], action: {}),
-                               DropDownCell(title: "Two", chartProducts: [ChartProduct(product: Product(name: "пук", category: .cheese, image: Image(systemName: "leaf")))], action: {}),
-                               DropDownCell(title: "Three", chartProducts: [ChartProduct(product: Product(name: "пук", category: .cheese, image: Image(systemName: "leaf")))], action: {})]
+let actions: [DropDownCell] = [DropDownCell(title: "One", chartProducts: [ChartProduct(product: Product(name: "пук", category: .cheese, image: Image(systemName: "leaf"), unit: .grams), quanity: 1)], action: {}),
+                               DropDownCell(title: "Two", chartProducts: [ChartProduct(product: Product(name: "пук", category: .cheese, image: Image(systemName: "leaf"), unit: .grams), quanity: 1)], action: {}),
+                               DropDownCell(title: "Three", chartProducts: [ChartProduct(product: Product(name: "пук", category: .cheese, image: Image(systemName: "leaf"), unit: .grams), quanity: 1)], action: {})]
 
 
 struct DropDownView_Previews: PreviewProvider {

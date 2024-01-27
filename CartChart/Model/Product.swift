@@ -17,4 +17,5 @@ struct Product: Hashable, Identifiable {
     var name: String
     var category: Category
     var image: Image
+    var unit: Unit
 }

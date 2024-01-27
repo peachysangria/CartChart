@@ -11,6 +11,8 @@
 		C71C10122B62D5C2006F24B4 /* ChartProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71C10112B62D5C2006F24B4 /* ChartProduct.swift */; };
 		C71C10142B62D5E1006F24B4 /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71C10132B62D5E1006F24B4 /* Chart.swift */; };
 		C71C10162B62D5F5006F24B4 /* ListCharts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71C10152B62D5F5006F24B4 /* ListCharts.swift */; };
+		C71CA9ED2B656D5B003C7D73 /* ProductSectionVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71CA9EC2B656D5B003C7D73 /* ProductSectionVIew.swift */; };
+		C71CA9F32B6578DC003C7D73 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71CA9F22B6578DC003C7D73 /* Unit.swift */; };
 		C74E3E0A299578D20043551C /* CartChartApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E3E09299578D20043551C /* CartChartApp.swift */; };
 		C74E3E0C299578D20043551C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E3E0B299578D20043551C /* MainView.swift */; };
 		C74E3E0E299578D30043551C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C74E3E0D299578D30043551C /* Assets.xcassets */; };
@@ -29,6 +31,8 @@
 		C71C10112B62D5C2006F24B4 /* ChartProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartProduct.swift; sourceTree = "<group>"; };
 		C71C10132B62D5E1006F24B4 /* Chart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
 		C71C10152B62D5F5006F24B4 /* ListCharts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCharts.swift; sourceTree = "<group>"; };
+		C71CA9EC2B656D5B003C7D73 /* ProductSectionVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSectionVIew.swift; sourceTree = "<group>"; };
+		C71CA9F22B6578DC003C7D73 /* Unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
 		C74E3E06299578D20043551C /* CartChart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CartChart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C74E3E09299578D20043551C /* CartChartApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartChartApp.swift; sourceTree = "<group>"; };
 		C74E3E0B299578D20043551C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -54,6 +58,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C71CA9EE2B657880003C7D73 /* CreateChart */ = {
+			isa = PBXGroup;
+			children = (
+				C71CA9EC2B656D5B003C7D73 /* ProductSectionVIew.swift */,
+				C74E3E1729957AB60043551C /* CreateChartView.swift */,
+			);
+			path = CreateChart;
+			sourceTree = "<group>";
+		};
+		C71CA9EF2B65789F003C7D73 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				C79875B42B570D78005FA013 /* DropDownCellView.swift */,
+				C79875B22B56CE3C005FA013 /* DropDownView.swift */,
+				C74E3E0B299578D20043551C /* MainView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		C71CA9F02B6578B8003C7D73 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				C79875BA2B5EAB58005FA013 /* Extensions.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		C71CA9F12B6578C9003C7D73 /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+				C79875BC2B615338005FA013 /* ChartView.swift */,
+			);
+			path = Chart;
+			sourceTree = "<group>";
+		};
 		C74E3DFD299578D20043551C = {
 			isa = PBXGroup;
 			children = (
@@ -73,14 +112,12 @@
 		C74E3E08299578D20043551C /* CartChart */ = {
 			isa = PBXGroup;
 			children = (
+				C71CA9F12B6578C9003C7D73 /* Chart */,
+				C71CA9F02B6578B8003C7D73 /* Helpers */,
+				C71CA9EF2B65789F003C7D73 /* Main */,
+				C71CA9EE2B657880003C7D73 /* CreateChart */,
 				C7C1C2A729A95CC300F6FBC9 /* Model */,
 				C74E3E09299578D20043551C /* CartChartApp.swift */,
-				C74E3E0B299578D20043551C /* MainView.swift */,
-				C79875B22B56CE3C005FA013 /* DropDownView.swift */,
-				C79875B42B570D78005FA013 /* DropDownCellView.swift */,
-				C74E3E1729957AB60043551C /* CreateChartView.swift */,
-				C79875BC2B615338005FA013 /* ChartView.swift */,
-				C79875BA2B5EAB58005FA013 /* Extensions.swift */,
 				C74E3E0D299578D30043551C /* Assets.xcassets */,
 				C74E3E0F299578D30043551C /* Preview Content */,
 			);
@@ -104,6 +141,7 @@
 				C7C1C2AA29A95F1500F6FBC9 /* DataParser.swift */,
 				C71C10132B62D5E1006F24B4 /* Chart.swift */,
 				C71C10152B62D5F5006F24B4 /* ListCharts.swift */,
+				C71CA9F22B6578DC003C7D73 /* Unit.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -136,7 +174,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					C74E3E05299578D20043551C = {
 						CreatedOnToolsVersion = 14.2;
@@ -178,6 +216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C71CA9F32B6578DC003C7D73 /* Unit.swift in Sources */,
 				C74E3E0C299578D20043551C /* MainView.swift in Sources */,
 				C7C1C2AB29A95F1500F6FBC9 /* DataParser.swift in Sources */,
 				C71C10162B62D5F5006F24B4 /* ListCharts.swift in Sources */,
@@ -186,6 +225,7 @@
 				C74E3E1829957AB60043551C /* CreateChartView.swift in Sources */,
 				C79875BD2B615338005FA013 /* ChartView.swift in Sources */,
 				C71C10122B62D5C2006F24B4 /* ChartProduct.swift in Sources */,
+				C71CA9ED2B656D5B003C7D73 /* ProductSectionVIew.swift in Sources */,
 				C7C1C2A929A95CFD00F6FBC9 /* Category.swift in Sources */,
 				C71C10142B62D5E1006F24B4 /* Chart.swift in Sources */,
 				C71C10102B62D568006F24B4 /* Product.swift in Sources */,
@@ -233,6 +273,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -293,6 +334,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
