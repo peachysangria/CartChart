@@ -60,6 +60,13 @@ struct CreateChartView: View {
                 }
             }
         }
+        .toolbar {
+            ToolbarItem(placement: .keyboard) {
+                Button("Done") {
+                    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                }                
+            }
+        }
         .navigationTitle("Создать список")
     }
     
@@ -74,7 +81,7 @@ struct CreateChartView: View {
             
             LazyVGrid(columns: columns, alignment: .center, spacing: 15) {
                 ForEach(products) { product in
-                    ProductSectionVIew(product: product, chartProducts: $chartProducts)
+                    ProductSectionVIew(product: product)
                 }
             }
         }

@@ -9,9 +9,11 @@ import SwiftUI
 
 struct ProductSectionVIew: View {
     var product: Product
-    @Binding var chartProducts: [ChartProduct]
-    @State var quanity: Int = 0
-    
+    //@Binding var chartProducts: [ChartProduct]
+    @State private var quanity: Int = 0
+    @State private var unitNumber: Double?
+    @FocusState private var fieldIsFocused: Bool
+
     var body: some View {
         //var chartProduct = ChartProduct(product: product, quanity: quanity)
         
@@ -24,17 +26,12 @@ struct ProductSectionVIew: View {
                     .foregroundColor(.orange)
                 HStack {
                     Button {
-    //                    switch Unit {
-    //                    case .grams: Text("гр")
-    //                    case .litres: Text("л")
-    //                    }
                         if quanity > 0 {
                             quanity -= 1
                         }
-                        //chartProducts.append(ChartProduct(product: product))
                     } label: {
                         UnevenRoundedRectangle()
-                            .foregroundColor(Color.gray.opacity(0.6))
+                            .foregroundColor(quanity > 0 ? Color.gray.opacity(0.6) : Color.clear)
                             .clipShape(
                                 .rect(
                                     topLeadingRadius: 20,
@@ -44,13 +41,29 @@ struct ProductSectionVIew: View {
                                 )
                             )
                             .frame(width: 50, height: 160, alignment: .trailing)
-                            .padding(.horizontal, -5)
+                            .padding(.horizontal, -10.5)
                     }
                     
-                    Rectangle()
-                        .foregroundColor(Color.gray.opacity(0.6))
-                        .frame(width: 60, height: 160, alignment: .center)
-                        .padding(.horizontal, -3)
+                    ZStack {
+                        Rectangle()
+                            .foregroundColor(quanity > 0 ? Color.gray.opacity(0.6) : Color.clear)
+                            .frame(width: 60, height: 160, alignment: .center)
+                            .padding(.horizontal, -3)
+                        VStack {
+                            Text("\(quanity)")
+                                .foregroundStyle(quanity > 0 ? Color.white : Color.black)
+                                .fontWeight(.bold)
+                                .font(.title)
+                                .offset(CGSize(width: 0, height: -20))                            
+                            
+                            TextField("UnitNumber", value: $unitNumber, format: .number, prompt: Text("ввод \(product.unit.rawValue)"))
+                                .keyboardType(.decimalPad)
+                                .focused($fieldIsFocused)
+                                .frame(width: 65, height: 20, alignment: .center)
+                                .offset(CGSize(width: 4, height: -15))
+                                //.submitLabel(.done)
+                        }
+                    }
                     
                     Button {
                         quanity += 1
@@ -67,7 +80,7 @@ struct ProductSectionVIew: View {
                                 )
                             )
                             .frame(width: 50, height: 160, alignment: .trailing)
-                            .padding(.horizontal, -5)
+                            .padding(.horizontal, -10.5)
                     }
                 }
             }
@@ -80,6 +93,6 @@ struct ProductSectionVIew: View {
     }
 }
 
-//#Preview {
-//    ProductSectionVIew(product: Product(name: "Vagina", category: .cosmetics, image: Image(systemName: "leaf"), unit: .litres), chartProducts: [ChartProduct(product: Product(name: "Vagina", category: .cosmetics, image: Image(systemName: "leaf"), unit: .litres), quanity: 0)])
-//}
+#Preview {
+    ProductSectionVIew(product: Product(name: "Молочко", category: .cosmetics, image: Image(systemName: "leaf"), unit: .litres))
+}

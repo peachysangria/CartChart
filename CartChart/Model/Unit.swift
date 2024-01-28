@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Unit {
-    case litres
-    case grams
+enum Unit: String {
+    case litres = "л"
+    case grams = "гр"
 }
