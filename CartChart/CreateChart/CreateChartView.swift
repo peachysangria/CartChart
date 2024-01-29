@@ -81,7 +81,7 @@ struct CreateChartView: View {
             
             LazyVGrid(columns: columns, alignment: .center, spacing: 15) {
                 ForEach(products) { product in
-                    ProductSectionVIew(product: product)
+                    ProductSectionVIew(product: product, chartProducts: $chartProducts)
                 }
             }
         }
